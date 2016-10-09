@@ -1,7 +1,12 @@
-<h1>All paintings</h1>
+<div class="uk-block uk-block uk-width-1-1">
+<h1 class="uk-margin-large-left">All paintings</h1>
+</div>
+
 <% @paintings.each do |painting| %>
   <ul>
-    <li><%= image_tag painting.image, :class => 'thumb' %></li>
-    <li><%= link_to painting.title, painting %></li>
+    <div class="uk-position-relative uk-width-1-2 uk-margin-large">
+    <img><%= image_tag painting.image%></img>
+    <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
+    </div>
   </ul>
 <% end %>

@@ -1,6 +1,6 @@
 <h1>Sign up</h1>
-<h2>Hi</h2>
 
+<div class="uk-block-muted">
 <% if @user.errors.any? %>
   <ol>
     <% @user.errors.full_messages.each do |msg| %>
@@ -23,6 +23,8 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </p>
+</div>
 
-  <%= f.submit 'Sign up!' %>
+
+  <%= f.submit 'Sign up!', class: 'uk-button' %>
  <% end %>

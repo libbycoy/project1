@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'uikit-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
@@ -37,6 +38,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'annotate'
+
 end
 
 group :development do
