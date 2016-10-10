@@ -1,6 +1,6 @@
 <div class="uk-block uk-block uk-width-1-1 uk-margin-large-left">
 
-  <h1 class="">Edit profile</h1>
+  <h1>Edit profile</h1>
   <%= form_for @user do |f| %>
     <p>
       <%= f.label :name %>
@@ -8,11 +8,16 @@
     </p>
 
     <p>
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+    </p>
+
+    <p>
       <%= f.label :image %>
       <%= f.url_field :image %>
     </p>
 
-    <%= f.submit %>
+    <%= f.submit 'Save changes' %>
   <% end %>
-  
+
 </div>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-# before_action :check_for_user, :only => [:index]
+  before_action :check_for_user, :only => [:edit, :only]
   before_action :check_for_admin, :only => [:index]
 
   def index
@@ -34,11 +34,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find params[:id]
-    user.update user_params
-    redirect_to user_path
+    @user = @current_user
+    if @user.update( user_params)
+      flash[:message] = "Profile successfully updated"
+      redirect_to user_path
+    else
+      render :edit
+    end
   end
-
 
   private
   def user_params
