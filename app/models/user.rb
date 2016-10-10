@@ -12,7 +12,6 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :paintings
   has_secure_password
   validates :email, :presence => true, :uniqueness => true
   # validates :name, :uniqueness => true, :length => {minimum => 2}

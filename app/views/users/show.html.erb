@@ -1,3 +1,17 @@
-<h1>Hello <%= @user.name%></h1>
-<p>Paintings:</p>
+<div class="uk-block uk-block uk-width-1-1 uk-margin-large-left">
+<h1><%= @user.name%>'s Gallery</h1>
+
 <p>New painting:</p>
+<%= link_to 'Create new', new_painting_path, class: 'uk-button'%>
+
+<p>My gallery:</p>
+<% @user.paintings.each do |painting| %>
+
+<div class="uk-position-relative uk-width-1-2 uk-margin-large">
+  <img><%= link_to image_tag(painting.image), painting %></img>
+  <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
+</div>
+
+<% end %>
+
+</div>

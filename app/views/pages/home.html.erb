@@ -1,4 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-You are logged in with user id: <%= session[:user_id] %>
+<% if @current_user.present? %>
+<div class="uk-block uk-block uk-width-1-1 uk-margin-large-left">
+<h1 class=>Hello <%= @current_user.name%></h1>
+
+  <div id="paint">
+    <canvas id="myCanvas" width="500" height="500">
+    </canvas>
+  </div>
+
+<p>My gallery:</p>
+  <% @current_user.paintings.each do |painting| %>
+  <div class="uk-position-relative uk-width-1-2 uk-margin-large">
+    <img><%= link_to image_tag(painting.image), painting %></img>
+    <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
+  </div>
+  <% end %>
+
+  <p>New painting:</p>
+    <%= link_to 'Create new', make_path, class: 'uk-button'%>
+    <% else %>
+    <li class="uk-parent"><a><%= link_to 'Login', login_path %></a></li>
+    <% end %>
+</div>

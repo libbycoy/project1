@@ -1,8 +1,9 @@
-<h1>All Users</h1>
+<div class="uk-block uk-block uk-width-1-1">
+<h1 class="uk-margin-large-left">All Users</h1></div>
 
 <% @users.each do |user| %>
   <ul>
-    <li><%= image_tag user.image, :class => 'thumb' %></li>
+    <li><%= image_tag user.image %></li>
     <li><%= link_to user.name, user %></li>
   </ul>
 <% end %>

@@ -1,5 +1,7 @@
-<h1><%= @painting.title %></h1>
+<div class="uk-block uk-block uk-width-1-1">
+<h1 class="uk-margin-large-left"><%= @painting.title %></h1>
 <h2><em><%= link_to @painting.user.name, @painting.user if @painting.user %></em></h2>
+</div>
 
 <%= image_tag(@painting.image, :class => 'feature') %>
 <!-- TODO Show other database columns here -->

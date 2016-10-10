@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def make
+  end
+
   def create
     @user = User.new user_params
 
@@ -19,6 +22,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    @paintings = Painting.all
   end
 
   def edit

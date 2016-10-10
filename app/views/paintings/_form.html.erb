@@ -24,5 +24,5 @@
     <%= f.select :user_id, User.pluck(:name, :id), :include_blank => true, :prompt => 'Select user' %>
   </p>
 
-  <%= f.submit, class: 'uk-button'%>
+  <%= f.submit %>
 <% end %>
