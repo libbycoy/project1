@@ -9,6 +9,7 @@
 #  updated_at      :datetime         not null
 #  password_digest :string
 #  image           :text
+#  admin           :boolean
 #
 
 class User < ActiveRecord::Base

@@ -11,4 +11,11 @@ class ApplicationController < ActionController::Base
 
     session[:user_id] = nil unless @current_user.present?
   end
+
+  def check_for_user
+    redirect_to root_path unless @current_user.present?
+  end
+
+  def check_for_admin
+    redirect_to root_path unless (@current_user.present? && @current_user.admin?)
 end

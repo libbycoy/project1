@@ -1,24 +1,21 @@
 
-<% if @current_user.present? %>
-<div class="uk-block uk-block uk-width-1-1 uk-margin-large-left">
-<h1 class=>Hello <%= @current_user.name%></h1>
-
-  <div id="paint">
-    <canvas id="myCanvas" width="500" height="500">
-    </canvas>
-  </div>
-
-<p>My gallery:</p>
-  <% @current_user.paintings.each do |painting| %>
-  <div class="uk-position-relative uk-width-1-2 uk-margin-large">
-    <img><%= link_to image_tag(painting.image), painting %></img>
-    <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
-  </div>
+<div class="uk-block uk-block uk-width-1-1">
+  <% if @current_user.present? %>
+  <h5 class='uk-margin-large-left'>Hello <%= @current_user.name%></h5>
+  <% else %>
+  <li class="uk-parent"><a><%= link_to 'Login', login_path %></a></li>
   <% end %>
+</div>
 
-  <p>New painting:</p>
-    <%= link_to 'Create new', make_path, class: 'uk-button'%>
-    <% else %>
-    <li class="uk-parent"><a><%= link_to 'Login', login_path %></a></li>
-    <% end %>
+<h1 class="uk-margin-large-left">All user paintings</h1>
+
+<% @paintings.each do |painting| %>
+  <ul>
+    <div class="uk-position-relative uk-width-1-2 uk-margin-large">
+    <img><%= image_tag painting.image%></img>
+    <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
+    </div>
+  </ul>
+<% end %>
+
 </div>

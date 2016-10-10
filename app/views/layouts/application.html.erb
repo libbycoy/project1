@@ -12,6 +12,9 @@
 
   <nav class="uk-navbar uk-width-1-1">
     <ul class="uk-navbar-nav">
+        <li><img src="http://www.hsdtaxlaw.com/wp-content/uploads/2016/05/20140806_LogoSupporterPlaceholder.png" class="logos"/></li>
+    </ul>
+    <ul class="uk-navbar-nav">
         <li><a><%= link_to 'All User Gallery', paintings_path %></a></li>
         <li class="uk-parent"><a><%= link_to 'Create new', new_painting_path %></a></li>
     </ul>
@@ -34,7 +37,12 @@
 </nav>
 <div class="uk-container">
 
-<%= yield %>
+  <% if flash[:message].present? %>
+    <p><%= flash[:message] %></p>
+  <% end %>
+
+  <%= yield %>
+
 </div>
 </body>
 </html>

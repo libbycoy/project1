@@ -1,2 +1,18 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="uk-block uk-block uk-width-1-1 uk-margin-large-left">
+
+  <h1 class="">Edit profile</h1>
+  <%= form_for @user do |f| %>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label :image %>
+      <%= f.url_field :image %>
+    </p>
+
+    <%= f.submit %>
+  <% end %>
+  
+</div>
