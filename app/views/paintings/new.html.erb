@@ -1,11 +1,31 @@
 <div class="uk-block uk-block uk-width-1-1 uk-margin-large-left">
   <h1 class="">Let's make a painting!</h1>
   <h5 class="">Touch anywhere to get started.</h5>
+</div>
 
-  <div id="paint">
-    <canvas id="myCanvas" width="300" height="300">
+<div id="paintboard" class="uk-margin-large-left">
+<div id="toolbar">
+  <div id="rad">
+    Radius <span id="radval">10</span>
+    <div id="decRad" class="radcontrol">-</div>
+    <div id="incRad" class="radcontrol">+</div>
+  </div>
+  <div id="colors">
+  </div>
+  <div id="save">
+  <div id="clear">
+    Clear
+  </div>
+  <div id="tosave">
+    Save
+  </div>
+  </div>
+
+</div>
+    <canvas id="canvas" height="600" width="600">
     </canvas>
-  </div>
+</div>
 
+<div class="uk-margin-large-left">
   <%= render :partial => 'form' %>
-  </div>
+</div>
