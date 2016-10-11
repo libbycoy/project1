@@ -5,9 +5,7 @@ class PaintingsController < ApplicationController
 
   def new
     @painting = Painting.new
-
     # require 'base64'
-    #
     # data = params[:data_uri]
     # image_data = Base64.decode64(data['data:image/png;base64,'.length .. -1])
     #
@@ -25,7 +23,7 @@ class PaintingsController < ApplicationController
 
       # user.image = req['public_id']
       # user.save
-      #
+
       painting = @current_user.paintings.new painting_params
       painting.image = "#{ params[:upload]}.png"
 
