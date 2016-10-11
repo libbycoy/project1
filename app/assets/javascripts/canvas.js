@@ -6,8 +6,8 @@ $(document).ready (function() {
     var radius = 10;
     var dragging = false;
 
-    // canvas.attr('height', $('#paintboard').innerWidth());
-    // canvas.attr('width', $('#paintboard').innerHeight());
+canvas.attr('height');
+canvas.attr('width');
 
     context.lineWidth = radius*2;
 
@@ -20,20 +20,20 @@ $(document).ready (function() {
       context.arc(e.offsetX, e.offsetY, radius, 0, Math.PI*2);
       context.fill();
       context.beginPath();
-      ontext.moveTo(e.offsetX, e.offsetY);
+      context.moveTo(e.offsetX, e.offsetY);
       }
-    }
+    };
 
     // dragging and holding down the mouse to record
     var engage = function(e){
       dragging = true;
       putPoint(e);
-    }
+    };
 
     var disengage = function() {
       dragging = false;
       context.beginPath();
-    }
+    };
 
     canvas.on('mousedown', engage);
     canvas.on('mousemove', putPoint);
@@ -61,11 +61,11 @@ $(document).ready (function() {
 
         decRad.on('click', function(){
           setRadius(radius-interval);
-        });
+        })
 
         incRad.on('click', function(){
           setRadius(radius+interval);
-        });
+        })
 
         setRadius(defaultRad);
 
