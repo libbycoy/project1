@@ -5,7 +5,7 @@
 <% @paintings.each do |painting| %>
   <ul>
     <div class="uk-position-relative uk-width-1-2 uk-margin-large">
-    <img><%= image_tag painting.image%></img>
+    <img><%= image_tag painting.image %></img>
     <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
     </div>
   </ul>

@@ -1,3 +1,17 @@
+function dataURLtoBlob(dataURL) {
+    // Decode the dataURL
+    var binary = atob(dataURL.split(',')[1]);
+    // Create 8-bit unsigned array
+    var array = [];
+    for(var i = 0; i < binary.length; i++) {
+        array.push(binary.charCodeAt(i));
+    }
+    // Return our Blob object
+    return new Blob([new Uint8Array(array)], {type: 'image/png'});
+}
+
+var blob;
+
 $(document).ready (function() {
   // if($('#canvas').length > 0 ) {
     var canvas = $("#canvas");
@@ -72,11 +86,6 @@ canvas.attr('width');
         // colors
         var colors = ['black', 'grey', 'white', 'red', 'orange', 'blue', 'indigo', 'violet'];
 
-        // var swatches = document.getElementsByClassName("swatch");
-        // for (var i = 0, n = swatches.length; i<n; i++) {
-        //   swatches[i].addEventListener('click', setSwatch);
-        // }
-
         // set swatch to a random color in the index of colors
         for (var i = 0, n = colors.length; i<n; i++) {
           var swatch = $('<div/>').addClass('swatch');
@@ -107,7 +116,24 @@ canvas.attr('width');
         $('.swatch:first').trigger('click');
 
         // save button to save image
-        var saveButton = $('#save');
+        var saveButton = $('#go');
 
-      // } // if #myCanvas exists
+
+
+        saveButton.on('click', function() {
+          var dataURL = ($('#canvas')[0]).toDataURL('image/png');
+          // window.location = dataURL;
+          // blob = dataURLtoBlob( dataURL );
+          // var fd = new FormData( $('#new_painting') );
+          // fd.append("painting_file", blob, "painting.png")
+          $("#upload").val(dataURL);
+        });
+
+        // saveButton.on('click', function(){
+        //           // $('#paintboard').append(canvas);
+        //   var dataURL =  canvas.toDataURL('image/png');
+        //   console.log (dataURL);
+        // })
+
+
 });

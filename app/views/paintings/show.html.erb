@@ -3,8 +3,8 @@
 <h2><em><%= link_to @painting.user.name, @painting.user if @painting.user %></em></h2>
 </div>
 
-<%= image_tag(@painting.image, :class => 'feature') %>
-<!-- TODO Show other database columns here -->
+<%= cl_image_tag(@painting.image) %>
+
 
 <div class="controls">
   <%= link_to 'Edit painting', edit_painting_path(@painting) %>
