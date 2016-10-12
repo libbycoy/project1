@@ -15,7 +15,9 @@ var blob;
 $(document).ready (function() {
   // if($('#canvas').length > 0 ) {
     var canvas = $("#canvas");
-    var context = canvas[0].getContext("2d");
+    var canvasTwo = $("#canvas2");
+    var context = canvasTwo[0].getContext("2d");
+    var contextTwo = canvas[0].getContext("2d");
 
     var radius = 10;
     var dragging = false;
@@ -128,7 +130,7 @@ $(document).ready (function() {
         var background = new Image();
 
         duckButton.on('click', function() {
-          context.drawImage(background, 0, 0);
+          contextTwo.drawImage(background, 0, 0);
         });
 
         background.src = '/assets/watermelon-duck-outline.png';
