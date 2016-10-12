@@ -1,0 +1,13 @@
+<h1>Favorites#index</h1>
+<p>Find me in app/views/favorites/index.html.erb</p>
+
+<% @favorites.each do |favorite| %>
+  <ul>
+    <div class="uk-position-relative uk-width-1-2 uk-margin-large">
+    <img><%= image_tag favorite.painting.image %></img>
+    <div>Creater: <%= favorite.painting.user.name %></div>
+    <div>Favoriter: <%= favorite.user.name %></div>
+    <div>Title: <%= favorite.painting.title %></div>
+    </div>
+  </ul>
+<% end %>

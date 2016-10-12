@@ -49,6 +49,11 @@ class PaintingsController < ApplicationController
     redirect_to painting
   end
 
+  def destroy
+    @painting = Painting.find params[:id]
+    @painting.destroy
+    redirect_to paintings_path
+  end
 
   private
   def painting_params

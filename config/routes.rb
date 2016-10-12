@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
+  post '/favorites' => 'favorites#create'
+  delete '/favorites' => 'favorites#destroy'
+
   get 'pages/home'
 
   root :to => 'pages#home'
@@ -14,5 +18,7 @@ Rails.application.routes.draw do
 
 
   get '/users/:id' => 'users#show'
+
+  post 'paintings/:id/favorite' => 'paintings#favorite'
 
 end

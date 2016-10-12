@@ -1,12 +1,35 @@
 <div class="uk-block uk-block uk-width-1-1">
+
 <h1 class="uk-margin-large-left"><%= @painting.title %></h1>
 <h2><em><%= link_to @painting.user.name, @painting.user if @painting.user %></em></h2>
 </div>
+
+<h2><em>
+  <% @painting.favorites.each do |p| %>
+  <p><%= p.user_id %> liked this at <%= p.created_at %></p>
+  <% end %>
+</em></h2>
 
 <%= cl_image_tag(@painting.image) %>
 
 
 <div class="controls">
-  <%= link_to 'Edit painting', edit_painting_path(@painting) %>
-  <%= link_to 'Delete painting', @painting, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+
+  <% if @painting.user_id == @current_user.id %>
+    <%= link_to 'Edit painting', edit_painting_path(@painting) %>
+    <%= link_to 'Delete painting', @painting, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <% end %>
 </div>
+
+  <% if @current_user.favorites.where(:painting_id => @painting.id).any? %>
+    <%= form_tag(favorites_path, method: "delete") do %>
+      <%= hidden_field_tag :painting_id, @painting.id %>
+      <%= submit_tag "Unfavorite"%>
+    <% end %>
+
+  <% else %>
+<%= form_tag(favorites_path, method: "post") do %>
+    <%= hidden_field_tag :painting_id, @painting.id %>
+    <%= submit_tag "Favorite"%>
+  <% end %>
+  <% end %>

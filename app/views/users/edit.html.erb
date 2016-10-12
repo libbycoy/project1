@@ -1,7 +1,7 @@
 <div class="uk-block uk-block uk-width-1-1 uk-margin-large-left">
 
   <h1>Edit profile</h1>
-  <%= form_for(@user, :html=> { :multipart => true }) do |f| %>
+  <%= form_for( @user, :html => {:multipart => true}) do |f| %>
     <p>
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -14,7 +14,7 @@
 
     <p>
       <%= f.label "User image:" %>
-      <%= f.cl_image_upload :name %>
+      <%= f.cl_image_upload :image %>
     </p>
 
     <%= f.submit 'Save changes' %>
