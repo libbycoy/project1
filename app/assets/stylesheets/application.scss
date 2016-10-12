@@ -1,3 +1,16 @@
+nav {
+  height: 60px;
+}
+
+.uk-navbar-nav > li > a {
+  height: 60px !important;
+  line-height: 60px  !important;
+}
+
+.uk-button {
+  height: 60px !important;
+  line-height: 60px !important;
+}
 
 #paintboard {
   position: relative;
@@ -12,7 +25,7 @@
 
 #canvas2 {
   position: absolute;
-  margin-top: 34px;
+  margin-top: 0px;
   left: 0;
 }
 
@@ -53,12 +66,8 @@
   margin-right: 20px;
 }
 
-#clear {
+#gradient {
   display: inline-block;
-  position: relative;
-  height: 20px;
-  padding: 8px;
-  background-color: #434343;
 }
 
 #tosave {
@@ -73,8 +82,10 @@
   background-color: #818181;
 }
 
-#clear:hover {
-  background-color: #818181;
+#clear {
+  padding-left: 2px;
+  padding-right: 2px;
+  display: inline-block;
 }
 
 #rad {

@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find params[:id]
     @paintings = Painting.all
+    @favorites = Favorite.all
   end
 
   def edit
@@ -57,7 +58,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :name, :password, :password_confirmation)
+    params.require(:user).permit(:email, :name, :image, :password, :password_confirmation)
   end
 
 end

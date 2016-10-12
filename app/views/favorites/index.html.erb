@@ -4,10 +4,7 @@
 <% @favorites.each do |favorite| %>
   <ul>
     <div class="uk-position-relative uk-width-1-2 uk-margin-large">
-    <img><%= image_tag favorite.painting.image %></img>
-    <div>Creater: <%= favorite.painting.user.name %></div>
-    <div>Favoriter: <%= favorite.user.name %></div>
-    <div>Title: <%= favorite.painting.title %></div>
+    <img><%= cl_image_tag favorite %></img>
     </div>
   </ul>
 <% end %>

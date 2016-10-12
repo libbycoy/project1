@@ -16,5 +16,9 @@
 
   <%= hidden_field_tag 'upload' %>
 
-  <%= f.submit :id => 'go' %>
+  <% if session[:user_id] = nil %>
+    <%= f.submit :data => {:confirm => 'Are you sure you would like to post this without creating an account?'} %>
+  <% else %>
+    <%= f.submit :id => 'go' %>
+  <% end %>
 <% end %>

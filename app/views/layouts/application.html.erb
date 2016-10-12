@@ -12,17 +12,19 @@
 <body>
 
   <nav class="uk-navbar uk-width-1-1">
-    <ul class="uk-navbar-nav">
-        <li><img src="http://www.hsdtaxlaw.com/wp-content/uploads/2016/05/20140806_LogoSupporterPlaceholder.png" class="logos"/></li>
+    <ul class="uk-navbar-nav uk-active">
+        <li class="uk-parent"><%= link_to 'Home', paintings_path %></li>
     </ul>
+
     <ul class="uk-navbar-nav">
-        <li><a><%= link_to 'Mindful Gallery', paintings_path %></a></li>
-        <li class="uk-parent"><a><%= link_to 'Create new', new_painting_path %></a></li>
+        <li><%= link_to 'Mindful Gallery', paintings_path %></li>
+        <li class="uk-parent"><%= link_to 'Create new', new_painting_path %></li>
     </ul>
         <% if @current_user.present? %>
     <ul class="uk-navbar-nav">
-        <li class="uk-parent"><a><%= link_to 'My account', @current_user%></a></li>
+        <li class="uk-parent"><%= link_to 'My account', @current_user%></li>
     </ul>
+
         <div class="uk-navbar-flip">
           <ul class="uk-navbar-nav">
           <li><button class="uk-button uk-flex-bottom">You are currently signed in as <%= @current_user.email %></button>
@@ -31,16 +33,17 @@
         </div>
         <% else %>
         <ul class="uk-navbar-nav">
-        <li class="uk-active"><a><%= link_to 'Sign up', new_user_path %></a></li>
-        <li class="uk-parent"><a><%= link_to 'Login', login_path %></a></li>
+        <li class="uk-parent"><%= link_to 'Sign up', new_user_path %></li>
+        <li class="uk-parent"><%= link_to 'Login', login_path %></li>
         <% end %>
     </ul>
-</nav>
+  </nav>
+
 <div class="uk-container">
 
-  <% if flash[:message].present? %>
+  <!-- <% if flash[:message].present? %>
     <p><%= flash[:message] %></p>
-  <% end %>
+  <% end %> -->
 
   <%= yield %>
 

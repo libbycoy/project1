@@ -4,9 +4,11 @@
 
 <% @paintings.each do |painting| %>
   <ul>
-    <div class="uk-position-relative uk-width-1-2 uk-margin-large">
+      <div class="uk-position-relative uk-width-medium-1-3">
+          <div class="uk-panel-box">
     <%= cl_image_tag painting.image %>
     <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
     </div>
+  </div>
   </ul>
 <% end %>

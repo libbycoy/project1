@@ -22,13 +22,30 @@
     </div>
 </div>
 
-<h3><%= @user.name%>'s Gallery</h3>
-<% @user.paintings.each do |painting| %>
-<div class="uk-position-relative uk-width-1-2 uk-margin-large">
-  <img><%= link_to image_tag(painting.image), painting %></img>
-  <div class="uk-position-cover uk-flex uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
+<div class="uk-grid">
+<div class="uk-width-medium-1-2 uk-margin-large-top">
+  <div class="uk-panel-box">
+    <h3><%= @user.name %>'s Gallery</h3>
+      <% @user.paintings.each do |painting| %>
+      <div class="uk-margin-large">
+        <img class="uk-thumbnail-mini"><%= link_to cl_image_tag(painting.image), painting %></img>
+        <div class="uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<% end %>
-
+<div class="uk-grid">
+  <div class="uk-width-medium-1-2 uk-margin-large-top">
+    <div class="uk-panel-box">
+      <h3><%= @user.name %>'s Favorites</h3>
+        <% @favorites.where(:user_id => @user.id).each do |favorite| %>
+        <div class="uk-position-relative uk-width-1-2 uk-margin-large">
+          <%= favorite.painting_id %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+<!-- cl_image_tag(@painting.image.where(:painting_id =  -->
 </div>

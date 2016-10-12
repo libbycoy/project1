@@ -3,7 +3,7 @@
   <% if @current_user.present? %>
   <h5 class='uk-margin-large-left'>Hello <%= @current_user.name%></h5>
   <% else %>
-  <li class="uk-parent"><a><%= link_to 'Login', login_path %></a></li>
+  <h4>Hello, please <%= link_to 'login', login_path %> or <%= link_to 'get started', new_painting_path %> right away!</h4>
   <% end %>
 </div>
 
