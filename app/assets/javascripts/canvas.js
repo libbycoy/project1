@@ -86,7 +86,6 @@ canvas.attr('width');
         // colors
         var colors = ['black', 'grey', 'white', 'red', 'orange', 'blue', 'indigo', 'violet'];
 
-        // set swatch to a random color in the index of colors
         for (var i = 0, n = colors.length; i<n; i++) {
           var swatch = $('<div/>').addClass('swatch');
           swatch.css('background-color', colors[i]);
@@ -104,6 +103,7 @@ canvas.attr('width');
             active.addClass('swatch');
           }
         }
+        $("#colors2").CanvasColorPicker();
 
         function setSwatch(e) {
           var swatch = $(e.target);
@@ -117,8 +117,6 @@ canvas.attr('width');
 
         // save button to save image
         var saveButton = $('#go');
-
-
 
         saveButton.on('click', function() {
           var dataURL = ($('#canvas')[0]).toDataURL('image/png');
@@ -134,6 +132,5 @@ canvas.attr('width');
         //   var dataURL =  canvas.toDataURL('image/png');
         //   console.log (dataURL);
         // })
-
 
 });

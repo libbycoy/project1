@@ -16,23 +16,20 @@ class PaintingsController < ApplicationController
 
   def create
     # raise 'hell'
+    painting = @current_user.paintings.new painting_params
 
     if params[:upload].present?
 
       req = Cloudinary::Uploader.upload( params[:upload] )
 
-      # user.image = req['public_id']
-      # user.save
+      painting.image = req['public_id'] # "#{ params[:upload]}.png"
 
-      painting = @current_user.paintings.new painting_params
-      painting.image = "#{ params[:upload]}.png"
-
-      painting.save
-
-      redirect_to painting
+      if painting.save
+        redirect_to painting
+      else
+        render :new
+      end
     end
-    # painting = Painting.create painting_params
-    # redirect_to painting
   end
 
   def edit
@@ -57,6 +54,6 @@ class PaintingsController < ApplicationController
 
   private
   def painting_params
-    params.require(:painting).permit(:title, :style, :image, :user_id)
+    params.require(:painting).permit(:title, :style, :user_id)
   end
 end

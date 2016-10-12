@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path # Sign up was successful
@@ -23,20 +24,6 @@ class UsersController < ApplicationController
        render :new
      end
 
-    if params[:image].present?
-
-      req = Cloudinary::Uploader.upload( params[:image] )
-
-      @user.image = "#{ params[:image]}.png"
-      @user.save
-
-      redirect_to user_path ( @user )
-    end
-    # if @user.save
-    #   redirect_to root_path # Sign up was successful
-    # else
-    #   render :new
-    # end
   end
 
   def show
@@ -49,8 +36,18 @@ class UsersController < ApplicationController
   end
 
   def update
+
     @user = @current_user
-    if @user.update( user_params)
+    @user.update_attributes( user_params )
+
+    # raise 'hellz'
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload( params[:file] )
+      @user.image = req['public_id'] # "#{ params[:upload]}.png"
+    end
+
+    if @user.save
       flash[:message] = "Profile successfully updated"
       redirect_to user_path
     else
@@ -60,7 +57,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :image, :name, :password, :password_confirmation)
+    params.require(:user).permit(:email, :name, :password, :password_confirmation)
   end
 
 end
