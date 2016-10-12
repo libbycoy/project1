@@ -1,3 +1,4 @@
+
 #paintboard {
   position: relative;
   border: 0.5px solid grey;
@@ -6,8 +7,13 @@
 }
 
 #canvas {
-  // height: 600px;
-  // width: 600px;
+  position: absolute;
+}
+
+#canvas2 {
+  position: absolute;
+  margin-top: 34px;
+  left: 0;
 }
 
 .logos {
@@ -27,7 +33,6 @@
   width: 580px;
   height: 34px;
   padding: 10px;
-  position: absolute;
   top: 0;
   background-color: #2f2f2f;
   color: white;

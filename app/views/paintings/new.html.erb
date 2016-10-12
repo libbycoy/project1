@@ -3,9 +3,6 @@
   <h5 class="">Touch anywhere to get started.</h5>
 </div>
 
-<div id="duckcanvas"></div>
-
-<div id="paintboard" class="uk-margin-large-left">
 <div id="toolbar">
   <div id="rad">
     Radius <span id="radval">10</span>
@@ -18,13 +15,40 @@
     Clear
   </div>
 </div>
-    <canvas id="canvas" height="600" width="600"></canvas>
-    <div id="above">
+
+<div class="uk-grid">
+    <div class="uk-width-7-10">
+
+      <div id="paintboard" class="uk-margin-large-left">
+        <canvas id="canvas2" height="550" width="600"></canvas>
+        <canvas id="canvas" height="600" width="600"></canvas>
+      </div>
+
+    </div>
+    <div class="uk-width-3-10">
+        <div class="uk-panel uk-panel-box">
+          <h3>Select a drawing</h3>
+          <div class="uk-thumbnail-mini">
+            <img src="https://s-media-cache-ak0.pinimg.com/originals/87/12/69/87126906af681d2e9109b7b844ad11e5.png" alt="">
+            <div class="uk-thumbnail-caption">Mandala 1</div>
+          </div>
+          <div class="uk-thumbnail-mini">
+            <img src="https://s-media-cache-ak0.pinimg.com/originals/87/12/69/87126906af681d2e9109b7b844ad11e5.png" alt="">
+            <div class="uk-thumbnail-caption">Mandala 1</div>
+          </div>
+        </div>
+
+        <div class="uk-panel uk-panel-box">
+          <h3>Color Palette</h3>
+        </div>
+
+        <div class="uk-panel uk-panel-box">
+          <h3>Texture</h3>
+        </div>
     </div>
 </div>
-<div id="paintboard" class="uk-margin-large-left">
-<canvas id="canvas2" height="600" width="600"></canvas>
-</div>
+
+
 
 <div class="uk-margin-large-left">
   <%= render :partial => 'form' %>
