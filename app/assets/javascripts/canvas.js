@@ -182,6 +182,16 @@ $(document).ready (function() {
 
         background.src = '/assets/watermelon-duck-outline.png';
 
+        var textureButton = $('#texture');
+        var background2 = new Image();
+
+        textureButton.on('click', function() {
+          contextTwo.drawImage(background2, 0, 0);
+        });
+
+        background2.src = '/assets/crayon-texture-01.png';
+        background2.css('width', '600px');
+
         $('#clear').on('click', function() {
         contextTwo.clearRect(0, 0, 600, 600);
         context.clearRect(0, 0, 600, 600);

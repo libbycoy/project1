@@ -15,7 +15,6 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    @painting = Painting.new
     painting = @current_user.paintings.new painting_params
 
     if params[:upload].present?
