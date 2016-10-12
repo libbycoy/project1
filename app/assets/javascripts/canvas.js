@@ -20,9 +20,6 @@ $(document).ready (function() {
     var radius = 10;
     var dragging = false;
 
-canvas.attr('height');
-canvas.attr('width');
-
     context.lineWidth = radius*2;
 
     // makes brush a circle at a given point
@@ -103,7 +100,7 @@ canvas.attr('width');
             active.addClass('swatch');
           }
         }
-        $("#colors2").CanvasColorPicker();
+        // $("#colors2").CanvasColorPicker();
 
         function setSwatch(e) {
           var swatch = $(e.target);
@@ -127,10 +124,12 @@ canvas.attr('width');
           $("#upload").val(dataURL);
         });
 
-        // saveButton.on('click', function(){
-        //           // $('#paintboard').append(canvas);
-        //   var dataURL =  canvas.toDataURL('image/png');
-        //   console.log (dataURL);
-        // })
+        var duckButton = $('#clear');
+        var background = new Image();
 
+        duckButton.on('click', function() {
+          context.drawImage(background, 0, 0);
+        });
+
+        background.src = '/assets/watermelon-duck-outline.png';
 });
