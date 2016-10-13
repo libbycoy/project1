@@ -181,14 +181,14 @@ $(document).ready (function() {
         //   $(e.target).css('background-color')
         // });
 
-        var imageObj = new Image();
-        var pattern = context.createPattern(imageObj, 'repeat');
-        imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/wood-pattern.png';
-
-        function setPattern(pattern){
-          context.fillStyle = pattern;
-          context.strokeStyle = pattern;
-        }
+        // var imageObj = new Image();
+        // var pattern = context.createPattern(imageObj, 'repeat');
+        // imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/wood-pattern.png';
+        //
+        // function setPattern(pattern){
+        //   context.fillStyle = pattern;
+        //   context.strokeStyle = pattern;
+        // }
 
         // $('#gradient').on('click', function() {
         //   context.fillStyle = pattern;
