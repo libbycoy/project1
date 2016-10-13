@@ -22,30 +22,40 @@
     </div>
 </div>
 
-<div class="uk-grid">
-<div class="uk-width-medium-1-2 uk-margin-large-top">
-  <div class="uk-panel-box">
-    <h3><%= @user.name %>'s Gallery</h3>
-      <% @user.paintings.each do |painting| %>
-      <div class="uk-margin-large">
-        <img class="uk-thumbnail-mini"><%= link_to cl_image_tag(painting.image), painting %></img>
-        <div class="uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div>
-        <% end %>
-      </div>
+<div class="uk-block">
+  <h2><%= @user.name %>'s Gallery</h2>
+</div>
+<div class="uk-slidenav-position" data-uk-slider>
+
+    <div class="uk-slider-container">
+        <ul class="uk-slider uk-grid-width-medium-1-4">
+          <% @user.paintings.each do |painting| %>
+            <li class=""><%= link_to cl_image_tag(painting.image), painting %>
+            <div class="uk-flex-center uk-flex-middle"><h3><%= link_to painting.title, painting %></h3></div></li>
+            <% end %>
+        </ul>
+        <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous"></a>
+        <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next"></a>
     </div>
-  </div>
+
 </div>
 
-<div class="uk-grid">
-  <div class="uk-width-medium-1-2 uk-margin-large-top">
-    <div class="uk-panel-box">
-      <h3><%= @user.name %>'s Favorites</h3>
-        <% @user.favorites.each do |favorite| %>
-        <div class="uk-position-relative uk-width-1-2 uk-margin-large">
-          <%= cl_image_tag(favorite.painting.image) %>
-          <% end %>
-        </div>
-      </div>
+<div class="uk-block">
+<h2><%= @user.name %>'s Favorites</h2>
+</div>
+
+
+<div class="uk-slidenav-position" data-uk-slider>
+
+    <div class="uk-slider-container">
+        <ul class="uk-slider uk-grid-width-medium-1-4">
+          <% @user.favorites.each do |favorite| %>
+            <li class=""><%= link_to cl_image_tag(favorite.painting.image) %>
+            <div class="uk-flex-center uk-flex-middle"><h3><%= link_to favorite.painting.title %></h3></div></li>
+            <% end %>
+        </ul>
+        <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous"></a>
+        <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next"></a>
     </div>
-<!-- cl_image_tag(@painting.image.where(:painting_id =  -->
+
 </div>

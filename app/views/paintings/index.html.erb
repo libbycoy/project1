@@ -2,9 +2,16 @@
 <h1 class="uk-margin-large-left">All user paintings</h1>
 </div>
 
+
+
+<div data-uk-grid>
 <% @paintings.each do |painting| %>
-    <div class="veryInline uk-margin-large-left uk-width-medium-1-4 uk-margin-top">
-      <div class="uk-panel"><h5>Title: <%= link_to painting.title, painting, :class => "uk-thumbnail-caption uk-margin-top-small" %> <br>Created by: <%= link_to painting.user.name, painting.user %></h5></div>
-      <%= cl_image_tag painting.image, :class => "uk-thumbnail"%>
+    <div class="veryInline uk-width-medium-1-4">
+      <figure class="uk-overlay uk-overlay-hover">
+        <%= cl_image_tag painting.image, :class => "uk-thumbnail"%>
+        <figcaption class="uk-overlay-panel uk-overlay-background">
+          Title: <%= link_to painting.title, painting %> <br>Created by: <%= link_to painting.user.name, painting.user %></h5></figcaption>
+      </figure>
     </div>
 <% end %>
+</div>

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'uikit-rails'
+gem "uikit-sass-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7.1'
