@@ -12,12 +12,24 @@ function dataURLtoBlob(dataURL) {
 
 var blob;
 
+function vc(w, c){
+  // var win = w.open();
+  // console.log(w, win);
+  open().document.write('<img src="' + c[0].toDataURL('image/png') + '"/>');
+}
+
+var canvasFront;
+var canvasBack;
+var frontcontext;
+var backdrop;
+
+
 $(document).ready (function() {
   // if($('#canvasBack').length > 0 ) {
-    var canvasFront = $("#canvas2");
-    var canvasBack = $("#canvas");
-    var frontcontext = canvasFront[0].getContext("2d");
-    var backdrop = canvasBack[0].getContext("2d");
+    canvasFront = $("#canvas2");
+    canvasBack = $("#canvas");
+    frontcontext = canvasFront[0].getContext("2d");
+    backdrop = canvasBack[0].getContext("2d");
 
     var radius = 10;
     var dragging = false;
@@ -215,16 +227,11 @@ $(document).ready (function() {
 
         saveButton.on('click', function(e) {
 
-          // e.preventDefault();
-
-          var fg_frontcontext = backdrop;
-          var bg_frontcontext = frontcontext;
+          frontcontext.drawImage($("#canvas")[0], 0, 0);
 
           // debugger;
 
-          bg_frontcontext.drawImage($("#canvas2")[0], 600, 600);
-
-          var dataURL = ($('#canvasBack')[0]).toDataURL('image/png');
+          var dataURL = ($('#canvas2')[0]).toDataURL('image/png');
           // var dataURL = bg_frontcontext.toDataURL('image/png');
 
           // console.log(bg_frontcontext, dataURL);
@@ -236,6 +243,7 @@ $(document).ready (function() {
           $("#upload").val(dataURL);
 
           // debugger;
+
         });
 
         var duckButton = $('#duck');

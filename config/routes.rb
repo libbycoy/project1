@@ -19,6 +19,4 @@ Rails.application.routes.draw do
 
   get '/users/:id' => 'users#show'
 
-  post 'paintings/:id/favorite' => 'paintings#favorite'
-
 end
