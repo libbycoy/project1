@@ -29,6 +29,9 @@ $(document).ready (function() {
     console.log('everything is fine');
     canvasFront = $("#canvas2");
     canvasBack = $("#canvas");
+
+    if (canvasFront.length === 0 || canvasBack.length === 0) { return; }
+
     frontcontext = canvasFront[0].getContext("2d");
     backdrop = canvasBack[0].getContext("2d");
 
