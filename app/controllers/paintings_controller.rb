@@ -29,6 +29,7 @@ class PaintingsController < ApplicationController
         render :new
       end
     end
+
   end
 
   def edit
