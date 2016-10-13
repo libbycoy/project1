@@ -24,11 +24,56 @@ $(document).ready (function() {
 
     context.lineWidth = radius*2;
 
+    var color = "rgb(255,0,0)";
+
+    function change(e){
+      color = this.value;
+    }
+
+    $("#bunny").on('change', change);
+
+    function start(e){
+      var mouseX = e.pageX - canvasTwo.offsetLeft;
+      var mouseY = e.pageY - canvasTwo.offsetTop;
+      paint = true;
+      context.beginPath();
+      context.moveTo(mouseX,mouseY);
+      points[points.length]=[mouseX,mouseY];
+    };
+
+    function setSwatch(e) {
+      var swatch = $(e.target);
+      setColor( swatch.css('background-color') );
+      $('.active').removeClass('active');
+      swatch.addClass('active');
+    }
+
+    function setColor(color){
+      context.fillStyle = color;
+      context.strokeStyle = color;
+      var active = $('.active');
+      if (active) {
+        // reset color to swatch
+        active.addClass('swatch');
+      }
+    }
+
+    $('#kitten').on('click', function() {
+      var swatch = $('<div/>').addClass('swatch');
+      swatch.css('background-color', color);
+      swatch.on('click', function(){
+        color = swatch.css('background-color');
+      });
+      $('#colors').append(swatch);
+    });
+
     // makes brush a circle at a given point
     var putPoint = function(e) {
       if (dragging) {
       context.lineTo(e.offsetX, e.offsetY);
       context.stroke();
+      context.strokeStyle = color;
+      context.fillStyle = color;
       context.beginPath();
       context.arc(e.offsetX, e.offsetY, radius, 0, Math.PI*2);
       context.fill();
@@ -67,7 +112,7 @@ $(document).ready (function() {
     var minRad = 0.5,
         maxRad = 100,
         defaultRad = 10,
-        interval = 5,
+        interval = 2,
         radSpan = $('#radval'),
         decRad = $('#decRad'),
         incRad = $('#incRad');
@@ -85,26 +130,29 @@ $(document).ready (function() {
         // colors
 
 
+
         var colors = ['black', 'grey', 'white', 'red', 'orange', 'blue', 'indigo', 'violet', pattern];
 
-        for (var i = 0, n = colors.length; i<n; i++) {
-          var swatch = $('<div/>').addClass('swatch');
-          swatch.css('background-color', colors[i]);
-          swatch.on('click', setSwatch);
-          $('#colors').append(swatch);
-        }
+        // for (var i = 0, n = colors.length; i<n; i++) {
+        //   var swatch = $('<div/>').addClass('swatch');
+        //   swatch.css('background-color', colors[i]);
+        //   swatch.on('click', setSwatch);
+        //   $('#kitten').on('click', function() {
+        //     $('#colors').append(swatch);
+        //   });
+        // }
 
 
         // identify swatch that's been clicked, set color, give active colors
-        function setColor(color){
-          context.fillStyle = color;
-          context.strokeStyle = color;
-          var active = $('.active');
-          if (active) {
-            // reset color to swatch
-            active.addClass('swatch');
-          }
-        }
+        // function setColor(color){
+        //   context.fillStyle = color;
+        //   context.strokeStyle = color;
+        //   var active = $('.active');
+        //   if (active) {
+        //     // reset color to swatch
+        //     active.addClass('swatch');
+        //   }
+        // }
 
         // var imageObj = new Image();
         // var pattern = context.createPattern(imageObj, 'repeat');
@@ -118,14 +166,14 @@ $(document).ready (function() {
         // imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/wood-pattern.png';
         // // $("#colors2").CanvasColorPicker();
 
-        function setSwatch(e) {
-          var swatch = $(e.target);
-          setColor( swatch.css('background-color') );
-          $('.active').removeClass('active');
-          swatch.addClass('active');
-        }
+        // function setSwatch(e) {
+        //   var swatch = $(e.target);
+        //   setColor( swatch.css('background-color') );
+        //   $('.active').removeClass('active');
+        //   swatch.addClass('active');
+        // }
         // on click, set the stroke style to pattern variable.
-        //
+        // //
         // $('#gradient').on('click', function(e) {
         //   context.fillStyle = pattern;
         //   context.strokeStyle = pattern;
@@ -190,7 +238,6 @@ $(document).ready (function() {
         });
 
         background2.src = '/assets/crayon-texture-01.png';
-        background2.css('width', '600px');
 
         $('#clear').on('click', function() {
         contextTwo.clearRect(0, 0, 600, 600);
