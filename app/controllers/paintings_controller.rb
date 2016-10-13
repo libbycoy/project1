@@ -16,7 +16,7 @@ class PaintingsController < ApplicationController
 
   def create
     painting = @current_user.paintings.new painting_params
-
+    raise 'hell'
     if params[:upload].present?
 
       req = Cloudinary::Uploader.upload( params[:upload] )
