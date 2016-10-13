@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   post '/favorites' => 'favorites#create'
   delete '/favorites' => 'favorites#destroy'
 
-  get 'pages/home'
+  get 'pages/home' => 'paintings#index'
 
-  root :to => 'pages#home'
+  root :to => 'paintings#index'
   resources :paintings
   get '/users/edit' => 'users#edit', :as => 'edit_user'
   resources :users, :only => [:new, :create, :index, :update, :show]
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   delete '/login' => 'session#destroy'
   get '/make' => 'users#make'
   get '/users' => 'users#index'
-
 
   get '/users/:id' => 'users#show'
 

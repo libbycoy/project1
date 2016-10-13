@@ -1,105 +1,124 @@
 <div class="uk-width-1-1 uk-margin-large-left uk-margin-top">
-  <h3 class="">Relax. It's painting time.</h1>
+  <h3 class="">Relax. It's painting time.</h3>
 
-<div id="toolbar">
-  <div id="colors">
-  </div>
-
-</div>
 </div>
 
 <div class="uk-grid">
+
     <div class="uk-width-2-3">
+
       <div class="uk-panel">
 
+
+        <div id="toolbar" class="uk-margin-large-left">
+          <div id="colors">
+          </div>
+
+        </div>
       <div id="paintboard" class="uk-margin-large-left">
         <canvas id="canvas2" height="600" width="600"></canvas>
         <canvas id="canvas" height="600" width="600"></canvas>
       </div>
     </div>
-
     </div>
 
     <div class="uk-width-1-3">
         <div class="uk-panel uk-panel-box">
           <a class="uk-button">
+            <div id="undo">
+            Undo move
+            </div>
+          </a>
+          <a class="uk-button">
             <div id="clear">
             Clear screen
             </div>
           </a>
-          <a class="uk-button">
-            <div id="gradient">
-            Gradient
-            </div>
-          </a>
+
           <div id="rad">
-            Radius <span id="radval">10</span>
-            <button id="decRad" class="uk-button">-</button>
-            <button id="incRad" class="uk-button">+</button>
-          </div>
-          <h3>Select a template</h3>
+            <a id="decRad" class="uk-icon-button uk-icon-minus"></a>
+            <a id="incRad" class="uk-icon-button uk-icon-plus"></a>
+            <div class="uk-text-thumbnail uk-text-small uk-text-center">Radius</div>
+        </div>
+        <p class="uk-text-bold uk-text-uppercase">Select a template</p>
 
         <div class="uk-grid">
             <div class="uk-width-medium-1-3">
               <a class="uk-button">
-                <img id="duck" class="uk-thumbnail-mini" src="https://s-media-cache-ak0.pinimg.com/originals/87/12/69/87126906af681d2e9109b7b844ad11e5.png" alt="">
+                <img id="mandala1" class="uk-thumbnail-mini" src="/assets/mandalas-01.png" alt="">
               </a>
-              <div class="uk-thumbnail-caption">Mandala 1</div>
+              <div class="uk-thumbnail-caption uk-text-small">Mandala 1</div>
             </div>
 
             <div class="uk-width-medium-1-3">
               <a class="uk-button">
-              <img id="duck" class="uk-thumbnail-mini" src="https://s-media-cache-ak0.pinimg.com/originals/87/12/69/87126906af681d2e9109b7b844ad11e5.png" alt=""></a>
-              <div class="uk-thumbnail-caption">Mandala 1</div>
+              <img id="mandala2" class="uk-thumbnail-mini" src="/assets/mandalas-02.png" alt="">
+            </a>
+              <div class="uk-thumbnail-caption uk-text-small">Mandala 2</div>
             </div>
 
             <div class="uk-width-medium-1-3">
               <a class="uk-button">
-              <img id="duck" class="uk-thumbnail-mini" src="https://s-media-cache-ak0.pinimg.com/originals/87/12/69/87126906af681d2e9109b7b844ad11e5.png" alt="">
+              <img id="mandala3" class="uk-thumbnail-mini" src="/assets/mandalas-03.png" alt="">
               </a>
-              <div class="uk-thumbnail-caption">Mandala 2</div>
+              <div class="uk-thumbnail-caption uk-text-small">Mandala 3</div>
             </div>
 
             <div class="uk-width-medium-1-3">
               <a class="uk-button">
-              <img id="duck" class="uk-thumbnail-mini" src="https://s-media-cache-ak0.pinimg.com/originals/87/12/69/87126906af681d2e9109b7b844ad11e5.png" alt="">
+              <img id="mandala4" class="uk-thumbnail-mini" src="/assets/mandalas-04.png" alt="">
               </a>
-              <div class="uk-thumbnail-caption">Mandala 1</div>
+              <div class="uk-thumbnail-caption uk-text-small">Mandala 4</div>
             </div>
 
             <div class="uk-width-medium-1-3">
               <a class="uk-button">
-              <img class="uk-thumbnail-mini" src="https://s-media-cache-ak0.pinimg.com/originals/87/12/69/87126906af681d2e9109b7b844ad11e5.png" alt="">
+              <img id="mandala5" class="uk-thumbnail-mini" src="/assets/mandalas-05.png" alt="">
               </a>
-              <div class="uk-thumbnail-caption">Mandala 2</div>
+              <div class="uk-thumbnail-caption uk-text-small">Mandala 5</div>
+            </div>
+
+            <div class="uk-width-medium-1-3">
+              <a class="uk-button">
+              <img id="mandala6" class="uk-thumbnail-mini" src="/assets/mandalas-06.png" alt="">
+              </a>
+              <div class="uk-thumbnail-caption uk-text-small">Mandala 6</div>
             </div>
 
         </div>
 
-        <div class="uk-panel uk-panel-box">
-          <h3>Color Palette</h3>
+      <p class="uk-text-bold uk-text-uppercase">Color Palette</p>
+        <div class="uk-grid">
           <form>
-            Select your favorite color:
+            Select color:
             <input type="color" id="bunny" value="#ffffff" name="favcolor">
+            <a id="kitten"class="uk-button">Add to palette</a>
           </form>
+
+            <p>
+            <button id="save2">Save palette</button></p>
+
+
         </div>
 
-        <div class="uk-panel uk-panel-box">
-          <h3>Texture</h3>
+      <p class="uk-text-bold uk-text-uppercase">Texture Library</p>
+        <div class="uk-grid">
+          <div class="uk-width-medium-1-3">
             <a id="texture"class="uk-button">Crayon
-            </a>
-        </div>
-
-        <div class="uk-panel uk-panel-box">
-          <h3>Kitten</h3>
-            <a id="kitten"class="uk-button">Kitten
-            </a>
+            </a></div>
+            <div class="uk-width-medium-1-3">
+            <a id="texture2"class="uk-button">Paper
+            </a></div>
+            <div class="uk-width-medium-1-3">
+            <a id="texture3"class="uk-button">Pixels
+            </a></div>
         </div>
 
         <div class="uk-panel uk-panel-box">
           <%= render :partial => 'form' %>
         </div>
     </div>
+</div>
 </div>
 
 

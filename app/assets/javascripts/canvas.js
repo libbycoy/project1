@@ -112,6 +112,7 @@ $(document).ready (function() {
 
     // navbar
     var setRadius = function(newRadius) {
+      // $('#radval').innerHTML = radius;
 
       if(newRadius < minRad)
         newRadius = minRad;
@@ -119,14 +120,13 @@ $(document).ready (function() {
         newRadius = maxRad;
         radius = newRadius;
         frontcontext.lineWidth = radius*2;
-        radSpan.innerHTML = radius;
-    }
+      }
 
     var minRad = 0.5,
         maxRad = 100,
         defaultRad = 10,
         interval = 2,
-        radSpan = $('#radval'),
+        // radSpan = $('#radval'),
         decRad = $('#decRad'),
         incRad = $('#incRad');
 
@@ -140,72 +140,6 @@ $(document).ready (function() {
 
         setRadius(defaultRad);
 
-        // colors
-
-
-
-        var colors = ['black', 'grey', 'white', 'red', 'orange', 'blue', 'indigo', 'violet'];
-
-        // for (var i = 0, n = colors.length; i<n; i++) {
-        //   var swatch = $('<div/>').addClass('swatch');
-        //   swatch.css('background-color', colors[i]);
-        //   swatch.on('click', setSwatch);
-        //   $('#kitten').on('click', function() {
-        //     $('#colors').append(swatch);
-        //   });
-        // }
-
-
-        // identify swatch that's been clicked, set color, give active colors
-        // function setColor(color){
-        //   frontcontext.fillStyle = color;
-        //   frontcontext.strokeStyle = color;
-        //   var active = $('.active');
-        //   if (active) {
-        //     // reset color to swatch
-        //     active.addClass('swatch');
-        //   }
-        // }
-
-        // var imageObj = new Image();
-        // var pattern = frontcontext.createPattern(imageObj, 'repeat');
-        //
-        // // identify swatch that's been clicked, set color, give active colors
-        // $('#gradient').on('click', function() {
-        //   frontcontext.fillStyle = pattern;
-        //   frontcontext.strokeStyle = pattern;
-        // });
-        //
-        // imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/wood-pattern.png';
-        // // $("#colors2").CanvasColorPicker();
-
-        // function setSwatch(e) {
-        //   var swatch = $(e.target);
-        //   setColor( swatch.css('background-color') );
-        //   $('.active').removeClass('active');
-        //   swatch.addClass('active');
-        // }
-        // on click, set the stroke style to pattern variable.
-        // //
-        // $('#gradient').on('click', function(e) {
-        //   frontcontext.fillStyle = pattern;
-        //   frontcontext.strokeStyle = pattern;
-        //   $(e.target).css('background-color')
-        // });
-
-        // var imageObj = new Image();
-        // var pattern = frontcontext.createPattern(imageObj, 'repeat');
-        // imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/wood-pattern.png';
-        //
-        // function setPattern(pattern){
-        //   frontcontext.fillStyle = pattern;
-        //   frontcontext.strokeStyle = pattern;
-        // }
-
-        // $('#gradient').on('click', function() {
-        //   frontcontext.fillStyle = pattern;
-        //   frontcontext.strokeStyle = pattern;
-        // });
 
         var gradient = frontcontext.createLinearGradient(0,0,170,0);
         gradient.addColorStop("0","magenta");
@@ -229,54 +163,96 @@ $(document).ready (function() {
 
           frontcontext.drawImage($("#canvas")[0], 0, 0);
 
-          // debugger;
-
           var dataURL = ($('#canvas2')[0]).toDataURL('image/png');
-          // var dataURL = bg_frontcontext.toDataURL('image/png');
-
-          // console.log(bg_frontcontext, dataURL);
-
-          // window.location = dataURL;
-          // blob = dataURLtoBlob( dataURL );
-          // var fd = new FormData( $('#new_painting') );
-          // fd.append("painting_file", blob, "painting.png")
           $("#upload").val(dataURL);
 
-          // debugger;
-
         });
 
-        var duckButton = $('#duck');
+        var mandala1 = $('#mandala1');
         var background = new Image();
 
-        duckButton.on('click', function() {
+        mandala1.on('click', function() {
           backdrop.drawImage(background, 0, 0);
+          background.src = '/assets/mandalas-01.png';
         });
 
-        background.src = '/assets/watermelon-duck-outline.png';
-
-        var textureButton = $('#texture');
+        var mandala2 = $('#mandala2');
         var background2 = new Image();
 
-        textureButton.on('click', function() {
+        mandala2.on('click', function() {
           backdrop.drawImage(background2, 0, 0);
         });
 
-        background2.src = '/assets/crayon-texture-01.png';
+        background2.src = '/assets/mandalas-02.png';
+
+        var mandala3 = $('#mandala3');
+        var background3 = new Image();
+
+        mandala3.on('click', function() {
+          backdrop.drawImage(background3, 0, 0);
+        });
+
+        background3.src = '/assets/mandalas-03.png';
+
+        var mandala4 = $('#mandala4');
+        var background4 = new Image();
+
+        mandala4.on('click', function() {
+          backdrop.drawImage(background4, 0, 0);
+        });
+
+        background4.src = '/assets/mandalas-04.png';
+
+        var mandala5 = $('#mandala5');
+        var background5 = new Image();
+
+        mandala5.on('click', function() {
+          backdrop.drawImage(background5, 0, 0);
+        });
+
+        background5.src = '/assets/mandalas-05.png';
+
+        var mandala6 = $('#mandala6');
+        var background6 = new Image();
+
+        mandala6.on('click', function() {
+          backdrop.drawImage(background6, 0, 0);
+        });
+
+        background6.src = '/assets/mandalas-06.png';
+
+
+        var textureButton = $('#texture');
+        var backgroundtext = new Image();
+
+        textureButton.on('click', function() {
+          backdrop.drawImage(backgroundtext, 0, 0);
+        });
+
+        backgroundtext.src = '/assets/crayon-texture-01.png';
+
+        var texture2 = $('#texture2');
+        var backgroundtext2 = new Image();
+
+        texture2.on('click', function() {
+          backdrop.drawImage(backgroundtext2, 0, 0);
+        });
+
+        backgroundtext2.src = '/assets/mandalas-07.png';
+
+        var texture3 = $('#texture3');
+        var backgroundtext3 = new Image();
+
+        texture3.on('click', function() {
+          backdrop.drawImage(backgroundtext3, 0, 0);
+        });
+
+        backgroundtext3.src = '/assets/mandalas-08.png';
 
         $('#clear').on('click', function() {
         backdrop.clearRect(0, 0, 600, 600);
         frontcontext.clearRect(0, 0, 600, 600);
         });
 
-      // create radial gradient
-      // var imageObj = new Image();
-      // imageObj.onload = function() {
-      //
-      //   var pattern = frontcontext.createPattern(imageObj, 'repeat');
-      //   frontcontext.fillStyle = pattern;
-      //
-      // $('#gradient').on('click', function() {
-      //   backdrop.fillStyle = backdrop.createRadialGradient(238, 50, 10, 238, 50, 300);
-      // });
+
 });

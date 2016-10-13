@@ -8,7 +8,7 @@ class PaintingsController < ApplicationController
     # require 'base64'
     # data = params[:data_uri]
     # image_data = Base64.decode64(data['data:image/png;base64,'.length .. -1])
-    #
+    
     # File.open("#{Rails.root}/public/uploads/somefilename.png", 'wb') do |f|
     #   f.write image_data
     # end

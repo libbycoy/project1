@@ -3,11 +3,8 @@
 </div>
 
 <% @paintings.each do |painting| %>
-<!-- <div class="uk-margin-large-left veryInline"> -->
-<!-- <div class="veryInline"> -->
     <div class="veryInline uk-margin-large-left uk-width-medium-1-4 uk-margin-top">
       <div class="uk-panel"><h5>Title: <%= link_to painting.title, painting, :class => "uk-thumbnail-caption uk-margin-top-small" %> <br>Created by: <%= link_to painting.user.name, painting.user %></h5></div>
       <%= cl_image_tag painting.image, :class => "uk-thumbnail"%>
     </div>
-  <!-- </div> -->
 <% end %>
