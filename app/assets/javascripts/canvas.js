@@ -26,7 +26,7 @@ var backdrop;
 
 $(document).ready (function() {
   // if($('#canvasBack').length > 0 ) {
-    debugger;
+    console.log('everything is fine');
     canvasFront = $("#canvas2");
     canvasBack = $("#canvas");
     frontcontext = canvasFront[0].getContext("2d");
