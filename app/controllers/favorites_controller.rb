@@ -6,13 +6,13 @@ class FavoritesController < ApplicationController
   def create
     @painting = Painting.find params[:painting_id]
     @painting.favorites.create :user => @current_user
-    redirect_to paintings_path
+    redirect_to @painting
   end
 
   def destroy
     @painting = Painting.find params[:painting_id]
     @painting.favorites.where(:user_id => @current_user.id).destroy_all
-    redirect_to paintings_path
+    redirect_to @painting
   end
 
   # def favorite

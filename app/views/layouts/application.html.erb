@@ -12,32 +12,30 @@
 <body>
 
   <nav class="uk-navbar uk-width-1-1">
-    <ul class="uk-navbar-nav uk-active">
-        <!-- <li class="uk-parent"><img src="assets/title-01.png" id="logo"></li>
-    </ul> -->
-
     <ul class="uk-navbar-nav">
         <li><%= link_to 'Mindful Gallery', paintings_path %></li>
         <li class="uk-parent"><%= link_to 'Create new', new_painting_path %></li>
     </ul>
+
         <% if @current_user.present? %>
     <ul class="uk-navbar-nav">
         <li class="uk-parent"><%= link_to 'My account', @current_user%></li>
     </ul>
-
-        <div class="uk-navbar-flip">
+  <div class="uk-navbar-flip">
           <ul class="uk-navbar-nav">
           <li><button class="uk-button uk-flex-bottom">You are currently signed in as <%= @current_user.email %></button>
           <button class="uk-button uk-flex-bottom"><%= link_to "Logout #{ @current_user.email }", login_path, :method => 'delete' %></button></li>
         </ul>
-        </div>
+
         <% else %>
         <ul class="uk-navbar-nav">
-        <li class="uk-parent"><%= link_to 'Sign up', new_user_path %></li>
-        <li class="uk-parent"><%= link_to 'Login', login_path %></li>
-        <% end %>
-    </ul>
+          <li class="uk-parent"><%= link_to 'Sign up', new_user_path %></li>
+          <li class="uk-parent"><%= link_to 'Login', login_path %></li>
+          <% end %>
+        </ul>
+      </div>
   </nav>
+
 
 <div class="uk-container">
 
