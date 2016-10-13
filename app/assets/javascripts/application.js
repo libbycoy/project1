@@ -1,5 +1,6 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require canvas
 //= require uikit
+//= require_tree .
