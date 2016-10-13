@@ -64,6 +64,7 @@ $(document).ready (function() {
       swatch.on('click', function(){
         color = swatch.css('background-color');
       });
+      swatch.on('click', setSwatch);
       $('#colors').append(swatch);
     });
 
