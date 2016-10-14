@@ -50,6 +50,7 @@
     <div class="uk-slider-container">
         <ul class="uk-slider uk-grid-width-medium-1-4">
           <% @user.favorites.each do |favorite| %>
+            
             <li class=""><%= link_to cl_image_tag(favorite.painting.image) %>
             <div class="uk-flex-center uk-flex-middle"><h3><%= link_to favorite.painting.title %></h3></div></li>
             <% end %>

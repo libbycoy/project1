@@ -1,28 +1,7 @@
-== README
+Mindful Drawwwing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Mindful Drawwwing is a social web app that allows you to do the currently popular practice of "Mindful Colouring" in the browser. It is ironic because mindful colouring is supposed to be meditative and prides itself on being an offline activity.
 
-Things you may want to cover:
+The app uses Ruby and Rails and includes three models. The focus of this project was the canvas board which allows you to colour-in templates of line drawings as you would on paper with Mindful colouring. The canvas board and its components were all created using Javascript.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+I used UI-kit as the framework, which is similar to bootstrap. 
