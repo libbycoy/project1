@@ -11,7 +11,7 @@
         <%= cl_image_tag painting.image, :class => "uk-thumbnail"%>
         <figcaption class="uk-overlay-panel uk-overlay-background">
             <h1><%= painting.title %></h1><h5><%=  painting.user.name %></h5>
-            <%= button_to "visit", painting, :class => "uk-button" %>
+            <%= button_to "visit", painting, :method => 'get', :class => "uk-button" %>
       </figcaption>
       </figure>
     </div>
