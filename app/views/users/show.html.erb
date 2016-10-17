@@ -5,21 +5,27 @@
     <div class="uk-width-medium-1-3">
         <div class="uk-panel-box">
       <%= cl_image_tag(@user.image) %>
-       <!-- <img src="<%= @user.image %>" class"profile"/> -->
       </div>
     </div>
+
+    <% if @current_user && ( @user.id == @current_user ) %>
     <div class="uk-width-medium-1-3">
         <div class="uk-panel-box">
-          <p>New painting:</p>
-          <%= link_to 'Create new', new_painting_path, class: 'uk-button'%>
+            <p>New painting:</p>
+              <%= link_to 'Create new', new_painting_path, class: 'uk-button'%>
         </div>
     </div>
+    <% end %>
+
+    <% if @current_user && ( @user.id == @current_user ) %>
     <div class="uk-width-medium-1-3">
         <div class="uk-panel-box">
           <p>Edit Profile:</p>
-        <%= link_to 'Edit profile', edit_user_path, class: 'uk-button'%>
+          <%= link_to 'Edit profile', edit_user_path, class: 'uk-button'%>
       </div>
     </div>
+    <% end %>
+
 </div>
 
 <div class="uk-block">
@@ -50,7 +56,7 @@
     <div class="uk-slider-container">
         <ul class="uk-slider uk-grid-width-medium-1-4">
           <% @user.favorites.each do |favorite| %>
-            
+
             <li class=""><%= link_to cl_image_tag(favorite.painting.image) %>
             <div class="uk-flex-center uk-flex-middle"><h3><%= link_to favorite.painting.title %></h3></div></li>
             <% end %>
