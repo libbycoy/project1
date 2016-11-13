@@ -258,5 +258,6 @@ $(document).ready (function() {
         frontcontext.clearRect(0, 0, 600, 600);
         });
 
+        $('input[type=text][id=bunny]').minicolors();
 
 });
