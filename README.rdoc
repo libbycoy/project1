@@ -1,7 +1,0 @@
-Mindful Drawwwing
-
-Mindful Drawwwing is a social web app that allows you to do the currently popular practice of "Mindful Colouring" in the browser. It is ironic because mindful colouring is supposed to be meditative and prides itself on being an offline activity.
-
-The app uses Ruby and Rails and includes three models. The focus of this project was the canvas board which allows you to colour-in templates of line drawings as you would on paper with Mindful colouring. The canvas board and its components were all created using Javascript.
-
-I used UI-kit as the framework, which is similar to bootstrap. 
